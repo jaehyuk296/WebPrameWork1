@@ -1,65 +1,89 @@
-## 🚀 프로젝트 실행 환경 (Execution Environment)
+## 🛍️ CreatiPick (크리에이픽)
+크리에이터와 팬을 잇는 큐레이션 커머스 플랫폼 > "누가 추천했는가"가 기준이 되는 새로운 쇼핑 경험
 
-본 프로젝트는 **React + Vite 기반 웹 서비스**입니다.
+## 📖 프로젝트 소개 (About Project)
+CreatiPick은 크리에이터의 추천 정보를 기반으로 사용자에게 최적의 제품을 안내하는 제휴 마케팅 기반의 연결형 플랫폼입니다.유튜브나 인스타그램 등 여러 플랫폼에 흩어져 있는 인플루언서의 추천 아이템(공구 정보)을 한곳에 모아, 팬들에게는 편리한 쇼핑 경험을, 크리에이터에게는 새로운 소통 창구를 제공합니다.
 
-## ▶️ 프로젝트 실행 방법 (How to Run)
+* For Fans: 탐색 시간 절약, 실패 없는 쇼핑, 새로운 제품 발견
 
-프로젝트를 실행하기 위한 전체 과정은 아래와 같습니다.
+* For Creators: 팬들과의 신뢰 형성, 자연스러운 수익 창출 모델
 
-### 1) 패키지 설치
+  
+## 👥 팀원 및 역할 (Team 연혁민혁) 
+| 이름 | 역할 | 담당 파트 |
+| :---: | :---: | :--- |
+| 정연우 | 팀장 | HOME: 메인 페이지, 커스텀 슬라이더, 트렌드 랭킹 UI |
+| 윤상혁 | 팀원 | SEARCH: 검색 로직, 카테고리 필터링, 검색 모드 자동 전환 |
+| 채민수 | 팀원 | CREATOR: 크리에이터 상세, 추천 상품 데이터 그룹핑(Grouping) |
+| 이재혁 | 팀원 | DETAIL: 상품 상세, 리뷰(CRUD), 찜하기/공유하기, 평점 계산 |
 
-`npm install`
+## 🛠️ 기술 스택 (Tech Stack) 
+* Environment
 
-### 2) 개발 서버 실행
+* Frontend
 
-`npm run dev`
+* Assets & Icons
 
-### 3) 브라우저에서 확인
+## 💡 주요 기능 및 구현 포인트 (Key Features)
+### 1. 홈 (Home)
 
-`http://localhost:5173`
+* Custom Slider: 외부 라이브러리(Swiper 등) 없이 useState와 CSS transform을 활용하여 가로 스크롤 슬라이더를 직접 구현, 최적화된 성능 제공. 
 
-## 🤝 협업 규칙
+* Trend UI: 공동 구매 진행 중인 제품과 인기 크리에이터 랭킹을 시각적으로 배치. 
 
-### 🌐 Git-flow
+### 2. 검색 및 필터링 (Search)
 
-> - **main**: 프로젝트가 최종적으로 배포되는 브랜치
-> - **develop**: 다음 출시 버전을 개발하는 브랜치
-> - **feature/design/…**: 기능을 개발하는 브랜치
->   <br>
+* Dynamic Filtering: useMemo를 활용하여 검색어 입력 시 실시간으로 데이터를 필터링. 
 
-### 📌 Git branch 규칙
+* Smart Categorization: 크리에이터 이름뿐만 아니라 카테고리 배열(['뷰티', '테크'])까지 탐색하여 정확도 높은 결과 반환. 
 
-> 1. **개인 작업은 꼭 feature/design/… 브랜치에서 하기**
-> 2. **모든 작업 시작 전 develop에서 pull을 받은 후, feature/design/… 브랜치에서 작업 시작**
-> 3. **개인 작업 마치면 feature/design/… 브랜치로 pull request를 통해 develop에 merge하기**
-> 4. **프로젝트 완료 후 main으로 merge (팀장님이 한번에 진행 예정)**
->    <br>
+* Auto Mode Switching: 검색 결과 타입(인물 vs 상품)에 따라 UI 뷰가 자동으로 전환. 
 
-### 📝 feature/design/… branch
+### 3. 크리에이터 상세 (Creator Detail)
 
-> 1. **브랜치명은 아래의 형식으로 작성합니다. (feature/이름-기능제목#이슈번호)**
->    - 팀원 ysh2002m의 브랜치명: `feature/ysh2002m-login#1`
-> 2. **Feature branch -> develop branch로 merge하기 전 PR에서 reviewers 설정하여 팀원 2명 이상에게 approve 받기**
-> 3. **PR 후 팀원들에게 공지하기**
->    <br>
+* Dynamic Routing: URL 파라미터(/:id)를 통해 크리에이터 정보를 동적으로 맵핑. 
 
-### 🎯 Commit Convention
+* Data Grouping: 해당 크리에이터가 추천한 상품들을 카테고리별로 자동 분류하여 렌더링하는 로직 구현. 
 
-> 1. **커밋 메시지의 형식은 통일해 주세요.**
-> 2. **예시: 🎨 Design: 푸터에 맞게 디자인 수정**
-> 3. **깃모지를 사용해 주세요.**
->
-> <li> 🎉 Start: Start New Project [:tada]
-> <li> ✨ Feat: 새로운 기능을 추가 [:sparkles]
-> <li> 🐛 Fix: 버그 수정 [:bug]
-> <li> 🎨 Design: CSS 등 사용자 UI 디자인 변경 [:art]
-> <li> ♻️ Refactor: 코드 리팩토링 [:recycle]
-> <li> 🔧 Settings: Changing configuration files [:wrench]
-> <li> 🗃️ Comment: 필요한 주석 추가 및 변경 [:card_file_box]
-> <li> ➕ Dependency/Plugin: Add a dependency/plugin [:heavy_plus_sign]
-> <li> 📝 Docs: 문서 수정 [:memo]
-> <li> 🔀 Merge: Merge branches [:twisted_rightwards_arrows:]
-> <li> 🚀 Deploy: Deploying stuff [:rocket]
-> <li> 🚚 Rename: 파일 혹은 폴더명을 수정하거나 옮기는 작업만인 경우 [:truck]
-> <li> 🔥 Remove: 파일을 삭제하는 작업만 수행한 경우 [:fire]
-> <li> ⏪️ Revert: 전 버전으로 롤백 [:rewind]
+### 4. 상품 상세 (Product Detail)
+
+* Data Persistence (핵심): 백엔드 없이 LocalStorage를 활용하여 리뷰 작성 및 찜하기 상태가 새로고침 후에도 유지되도록 구현. 
+
+* Real-time Calculation: 리뷰 작성 시 reduce 함수가 작동하여 평균 별점과 리뷰 개수를 즉시 재계산 및 UI 반영. 
+
+* Safety Guard: 데이터 손상 시 자동으로 초기 목데이터(Mock Data)로 복구하여 런타임 에러 방지. 
+
+* Link-out: '구매하기' 버튼 클릭 시 실제 판매처로 연결 (Affiliate 모델).
+
+## 📂 폴더 구조 (Directory Structure)
+```
+src/
+├── components/        # 공통 컴포넌트 (SearchBar 등)
+├── mocks/             # Mock Data (creators, products, reviews)
+├── pages/
+│   ├── Home/          # 메인 페이지 및 슬라이더 로직
+│   ├── Search/        # 검색 및 필터링 로직
+│   ├── Creator/       # 크리에이터 상세 페이지
+│   └── Detail/        # 상품 상세 및 리뷰 로직
+├── routes/            # React Router 설정
+└── styles/            # Global Styles
+```
+
+## 🚀 설치 및 실행 (Getting Started)이 프로젝트는 Vite 기반으로 만들어졌습니다.
+### 1. 저장소 클론
+git clone https://github.com/your-repo/creatipick.git
+
+### 2. 패키지 설치
+npm install
+
+### 3. 개발 서버 실행
+npm run dev
+
+## 📝 프로젝트 후기 (Retrospective) 
+* Architecture: 백엔드 API가 없는 환경에서 관계형 데이터(User-Product-Review)를 구조화하고, LocalStorage를 활용해 데이터 영속성을 구현하는 방법을 익혔습니다.
+
+* Optimization: useMemo, useEffect 등 React Hooks의 동작 원리를 이해하고, 불필요한 렌더링을 방지하는 최적화 작업을 수행했습니다.
+
+* Collaboration: 팀원들과 함께 컴포넌트 구조를 설계하고 Git을 통한 협업 프로세스를 경험했습니다.
+
+© 2025 Team 연혁민혁. All Rights Reserved.
