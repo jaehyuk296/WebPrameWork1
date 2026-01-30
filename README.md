@@ -31,19 +31,28 @@ CreatiPick은 크리에이터의 추천 정보를 기반으로 사용자에게 �
 
 * Trend UI: 공동 구매 진행 중인 제품과 인기 크리에이터 랭킹을 시각적으로 배치. 
 
+<img width="1919" height="910" alt="image" src="https://github.com/user-attachments/assets/9e4ccf16-bf77-46b2-8e87-5d7109351a2a" />
+
 ### 2. 검색 및 필터링 (Search)
 
 * Dynamic Filtering: useMemo를 활용하여 검색어 입력 시 실시간으로 데이터를 필터링. 
 
 * Smart Categorization: 크리에이터 이름뿐만 아니라 카테고리 배열(['뷰티', '테크'])까지 탐색하여 정확도 높은 결과 반환. 
 
-* Auto Mode Switching: 검색 결과 타입(인물 vs 상품)에 따라 UI 뷰가 자동으로 전환. 
+* Auto Mode Switching: 검색 결과 타입(인물 vs 상품)에 따라 UI 뷰가 자동으로 전환.
+
+<img width="1919" height="905" alt="image" src="https://github.com/user-attachments/assets/2f5df108-22a6-40a6-9fac-8c8b9e6a3439" />
+<img width="1918" height="900" alt="image" src="https://github.com/user-attachments/assets/4f5a1b17-2749-4eca-8699-552b25755202" />
+
 
 ### 3. 크리에이터 상세 (Creator Detail)
 
 * Dynamic Routing: URL 파라미터(/:id)를 통해 크리에이터 정보를 동적으로 맵핑. 
 
-* Data Grouping: 해당 크리에이터가 추천한 상품들을 카테고리별로 자동 분류하여 렌더링하는 로직 구현. 
+* Data Grouping: 해당 크리에이터가 추천한 상품들을 카테고리별로 자동 분류하여 렌더링하는 로직 구현.
+
+<img width="864" height="907" alt="image" src="https://github.com/user-attachments/assets/33ae5124-5c11-4138-8968-e77b325e510b" />
+
 
 ### 4. 상품 상세 (Product Detail)
 
@@ -54,6 +63,9 @@ CreatiPick은 크리에이터의 추천 정보를 기반으로 사용자에게 �
 * Safety Guard: 데이터 손상 시 자동으로 초기 목데이터(Mock Data)로 복구하여 런타임 에러 방지. 
 
 * Link-out: '구매하기' 버튼 클릭 시 실제 판매처로 연결 (Affiliate 모델).
+
+<img width="566" height="899" alt="image" src="https://github.com/user-attachments/assets/c3bae711-810d-4341-aeae-8b34871db8a1" />
+
 
 ## 📂 폴더 구조 (Directory Structure)
 ```
