@@ -8,6 +8,8 @@ CreatiPick은 크리에이터의 추천 정보를 기반으로 사용자에게 �
 
 * For Creators: 팬들과의 신뢰 형성, 자연스러운 수익 창출 모델
 
+## 📺 프로젝트 시연 영상
+[![시연 영상 보기](https://img.shields.io/badge/Video-Play-red?style=for-the-badge&logo=youtube)](https://github.com/jaehyuk296/WebPrameWork1/releases/download/v1.0.0/default.mp4)
   
 ## 👥 팀원 및 역할 (Team 연혁민혁) 
 | 이름 | 역할 | 담당 파트 |
